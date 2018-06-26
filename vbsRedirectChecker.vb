@@ -10,23 +10,23 @@ Function main()
 	    'if the length of userUrl is 0, quit the script with a message
 	    If Len(userUrl) = 0 Then
             MsgBox("Copy a link first before executing this script! You must include 'http:' OR 'https:'", 1, "ERROR")
-            Exit Do
-            Exit If	
-	'check it to make sure it's a link
-	'this basically uses InStr to see if http: or https: occurs in userUrl's input
-	
-	'isValid acts like a boolean. validateUrl will return 1 for GOOD LINK 
-	' returns 0 for BAD / ERROR
-	isValid = validateUrl(userURL)
 
+        End If
+        'check it to make sure it's a link
+        'this basically uses InStr to see if http: or https: occurs in userUrl's input
 
+        'isValid acts like a boolean. validateUrl will return 1 for GOOD LINK 
+        ' returns 0 for BAD / ERROR
+        isValid = validateUrl(userURL)
 
-            'if "http:" or "https:" isn't in the userUrl, the script will quit
-            If urlVar0 == 1 || urlVar1 == 1 Then
-                InputBox("Pasted from your clipboard:", mbTitle, userURL)
-            Else
+        'if "http:" or "https:" isn't in the userUrl, the script will quit
+        If urlVar0 = 1 Or urlVar1 = 1 Then
+            InputBox("Pasted from your clipboard:", mbTitle, userUrl)
+        Else
 
-                InputBox("Enter or paste your url here:", mbTitle, inputUrl)
+            InputBox("Enter or paste your url here:", mbTitle, inputUrl)
+        End If
+    End Try
 End Function
 
 
